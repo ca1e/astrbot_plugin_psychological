@@ -112,7 +112,10 @@ class PsychologicalPlugin(Star):
             logger.error(f"处理图片 API 时发生错误: {str(e)}")
             return None
 
-    @filter.command("心理委员")
+    @filter.command(
+        "心理委员",
+        alias={"我不得劲", "不得劲", "我emo了", "emo了", "不开心", "难受"},
+    )
     async def psychological(self, event: AstrMessageEvent):
         """心理委员指令，随机返回一张图片"""
         # 随机选择一条提示语
